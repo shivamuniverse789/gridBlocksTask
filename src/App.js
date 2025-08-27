@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import GridItem from "./components/GridItem";
 
 function App() {
+  const[clearSelection, setClearSelection] = useState(false)
+  const btnClickHandler = () => {
+    setClearSelection(true)
+  }
+  const updateClearSelection = () => {
+    setClearSelection(false)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="grid-container">
+        <GridItem clearSelection={clearSelection} updateClearSelection={updateClearSelection}/>
+        <GridItem clearSelection={clearSelection} updateClearSelection={updateClearSelection}/>
+        <GridItem clearSelection={clearSelection} updateClearSelection={updateClearSelection}/>
+        <GridItem clearSelection={clearSelection} updateClearSelection={updateClearSelection}/>
+        <GridItem clearSelection={clearSelection} updateClearSelection={updateClearSelection}/>
+        <GridItem clearSelection={clearSelection} updateClearSelection={updateClearSelection}/>
+        <GridItem clearSelection={clearSelection} updateClearSelection={updateClearSelection}/>
+        <GridItem clearSelection={clearSelection} updateClearSelection={updateClearSelection}/>
+        <GridItem clearSelection={clearSelection} updateClearSelection={updateClearSelection}/>
+      </div>
+      <button className="clearBtn" onClick={btnClickHandler}>Clear</button>
     </div>
   );
 }

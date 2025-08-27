@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+  grid-gap: 10px;
+  padding: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  display: grid;
+  place-items: center;
+  min-width: 50px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color .3s ease;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.grid-item:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.grid-item:hover {
+  background-color: #FFFFFF;
+}
+
+.checkboxChecked {
+  background-color: #FFFFFF;
+}
+
+.clearBtn {
+  color: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: .6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color .25s;
+}
+
+.clearBtn:hover {
+  border-color: #646cff;
+}
